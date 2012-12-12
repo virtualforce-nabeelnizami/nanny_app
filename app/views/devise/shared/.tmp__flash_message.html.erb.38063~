@@ -1,0 +1,16 @@
+<%- if flash.present? %>
+
+  // check flash type
+  <%- if flash[:error].present? %>
+    <%- flash_type = :error %>
+  <%- elsif flash[:warning].present? %>
+    <%- flash_type = :warning %>
+  <%- elsif flash[:success].present? %>
+    <%- flash_type = :success %>
+  <%- elsif flash[:alert].present? %>
+    <%- flash_type = :alert %>
+
+  <%- if flash[flash_type].present? %>
+    <div id="notification">
+      <div class = <%= "note flash #{flash_type.to_s}" %>>
+        <%= flash[flash_type] %>

@@ -1,0 +1,13 @@
+<%= image_tag @user.photo.url(:large), :id => "cropbox" %>
+
+<h4>Preview</h4>
+<div style="width: 100px; height: 100px; overflow: hidden;">
+  <%= image_tag @user.photo.url(:large), :id => "preview" %>
+</div>
+
+<%= form_for @user, :url => save_photo_profile_path, :remote => true do |form| %>
+  <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+    <%= form.text_field attribute, :id => attribute %>
+  <% end %>
+  <p><%= form.submit "Crop" %></p>
+<% end %>

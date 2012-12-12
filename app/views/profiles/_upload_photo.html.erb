@@ -1,0 +1,18 @@
+<div id='photo_uploader_content'>
+  <H2>Upload Profile Picture</H2>
+    <%= form_for @user, :url => save_photo_profile_path, :html => {:multipart => true, :id => 'fileupload'} do |form| %>
+        <%if @user.errors.any? %>
+            <ul>
+                <% @user.errors.full_messages.each do |msg| %>
+                    <li>
+                        <%= msg %>
+                    </li>
+                <% end %>
+            </ul>
+        <% end  %>
+        <%= form.label :photo, 'Photo' %>
+        <%= form.file_field :photo %>
+    <% end %>
+</div>
+<div id='photo_cropping'>
+</div>

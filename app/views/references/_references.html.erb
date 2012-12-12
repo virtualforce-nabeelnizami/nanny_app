@@ -1,0 +1,33 @@
+<div class="clear"></div>
+<div>
+	<table id="reference-list">
+		<tbody>
+			<tr>
+				<th>Name</th>
+				<th>Privacy</th>
+				<th>Care services it applies to</th>
+				<th>&nbsp;</th>
+			</tr>
+		</tbody>
+		<% @references.each do |reference| %>
+			<tr>
+				<td><%= reference.name %></td>
+				<td><%= reference.private_description %></td>
+				<td><%= reference.reference_types_text %></td>
+				<td>
+					<%= link_to 'Edit', edit_reference_path(reference), :remote => true %> | 
+					<%= link_to 'Delete', reference, :confirm => 'Are you sure?', :method => :delete, :remote => true %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+<div class="clear"></div>
+<div id="agreement-container">
+	<ul>
+		<li><input type="checkbox" id="agreement" name="agreement"></li>
+		<li id="agreement-text"><label for="agreement">By Checking this box I acknowledge 
+		that all the references information I provide is accurate and agree that the Royal Nanny Care website reserve the right to contact such references and verify them on behalf of its members.</label></li>
+		<li id="close-btn"><input type="button" id="reference-close" name="done" value="Done"/></li>
+	</ul>
+</div>

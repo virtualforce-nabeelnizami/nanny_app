@@ -1,0 +1,315 @@
+#login_container{
+margin:auto;
+  margin-top:50px;
+  width:1200px;  
+  position:relative;
+  } 
+
+
+#front_logo{
+  width:50%;
+ 
+}
+
+#signup_box{
+  position:relative;
+  left:-40px;
+  margin-top:30px;
+  
+}
+
+#signup_box .element{
+  margin-bottom:10px;
+  paddinxg:0 10px;
+  padding-right:10px;
+  text-align:center;
+  color:white;
+  font-weight:bold;
+}
+
+#signup_box_top{
+  padding-top:15px;
+  background:url('home_background_top.png') no-repeat;
+  width:428px;
+  height:81px;
+  font-size:20px;
+}
+
+#signup_box_middle{
+  background:url('home_background_middle.png') no-repeat;
+  width:428px;
+  height:30px;
+  font-size:15px;
+  padding-top:5px;
+}
+
+#signup_box_bottom{
+  background:url('home_background_bottom.png') no-repeat; 
+  width:428px;
+  height:258px;
+
+}
+
+#signup_box{
+  width:428px;
+}
+
+.sign_up_fields{
+  width:222px;
+}
+
+
+#faceook_signup{
+  margin-top: 10px;
+  width:170px;
+  margin-left:10px;
+  padding:5px;
+}
+
+
+
+#faceook_signup img{
+   width:180px;
+   position:relative;
+   left:-15px;
+}
+
+#faceook_signup ul{
+  color:white;
+  font-weight:bold;
+  width:100%;
+  text-align:left;
+  padding-left:15px;
+  font-size:18px;
+  margin-top:0px;
+}
+
+#faceook_signup ul li{
+  margin-bottom:2px;
+  font-size:13px; 
+}
+
+
+form#ajax_signup{ 
+  margin-top:10px;
+  padding-left:5px; 
+}
+
+form#ajax_signup input{
+    margin-bottom:0px;
+    margin-top:0px;
+ }
+ 
+ 
+
+
+form#ajax_signup div{
+  margin-top:3px;
+}
+
+#login_page .content{
+  margin:auto;
+  height:660px;
+  background: url('home_page_background2.jpg') no-repeat;
+  background-colorx:white;
+  
+}
+
+
+
+#login_header{
+  width:1200px;
+  height:144px;
+  background: url('home_page_header.jpg') no-repeat;
+  border:0px;
+  margin:auto;
+  background-color:black;
+  margin-top:-60px;
+}
+
+#login_header img{
+  float:right;
+  margin-top:80px;
+}
+
+.sign_up_field{
+  
+  width:221px;
+}
+
+
+
+
+
+#location_box{
+  width:384px;
+  height:71px;
+  margin:auto;
+  margin-top:10px;
+  padding-top:10px;
+  background:url('location_background.png') no-repeat;
+  color:black;
+  font-weight:bold;
+}
+
+#location_box a{
+  color:gold;
+  display:block;
+  float:right;  
+}
+
+
+.box{
+  background:url('change_location_background.jpg') no-repeat;
+  width:274px;
+  height:266px;
+  display:block;
+  display:none; 
+  box-shadow:0px 0px 15px #999;
+  position:absolute;
+ }
+ .collapse { position:relative; }
+
+.box a.close {
+   color:red;
+   font-size:12px;
+   font-family:arial;
+   text-decoration:underline;
+}
+
+
+.box_text{
+  font-weight:bold;
+  color:black;
+  position:relative;
+  top:80px;
+  left:75px;
+  width:188px;
+  
+}
+
+
+.box_text input{
+  width:50%;
+  display:block;
+  margin:auto;
+}
+
+
+.box .done{
+  
+  margin-top:240px;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+
+
+#facebox .content{
+  background: #FFF;
+  width: 400px;
+  height: 400px;
+  
+}
+
+#ajax_signup input{
+  height:24px;
+  padding-left:5px;
+}
+
+
+#ajax_signup input[type="submit"]{
+  margin: 2px 33px 0 0;
+  padding: 0;
+  width:30px;
+  display: block;
+  floatx: left;
+}
+
+#user_full_name{
+  border:0px;
+  background-color:white;
+  background:url('full_name_text_field.png') no-repeat;
+}
+
+
+#user_email{
+  border:0px;
+  background-color:white;
+  background:url('email_text_box.png') no-repeat;
+}
+
+
+#user_password,#user_password_confirmation{
+  border:0px;
+  background-color:white;
+  background:url('password_text_box.png') no-repeat;  
+ }
+
+.signup{
+  float:right;
+  position:relative;
+  left:-8px;
+}
+
+
+
+
+
+/*************************************/
+
+.contact_us {
+  width:225px;
+  float:left;
+  margin-right:40px;
+  margin-top:-14px;
+}
+
+
+.contact_us input{
+  width:224px;
+  margin-bottom:5px;
+  height:27px;
+}
+
+
+#contact_submit input{
+  
+  width:60px;
+}
+.contact_us #email{
+  border:0px;
+  background-color:white;
+  background:url('email_text_box.png') no-repeat;
+}
+
+.contact_us #name{
+    border:0px;
+    background-color:white;
+    background:url('full_name_text_field.png') no-repeat;
+}
+
+
+.contact_us #subject{
+  border:0px;
+  background-color:white;
+  background:url('full_name_text_field.png') no-repeat;
+}
+
+
+.contact_us #body{
+  width:224px;
+  height:200px;
+}
+
+
+
+.contact_text{
+  margin-top:20px;
+  padding-left:10px;
+}
+
+
+footer{
+  width:640px;
+}

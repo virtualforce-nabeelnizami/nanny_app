@@ -1,0 +1,51 @@
+                                  root        /                                                 home#index
+                            home_index GET    /home/index(.:format)                             home#index
+                          home_contact GET    /home/contact(.:format)                           home#contact
+                             home_info GET    /home/info(.:format)                              home#info
+                            home_about GET    /home/about(.:format)                             home#about
+                  home_switch_location GET    /home/switch_location(.:format)                   home#switch_location
+                      new_user_session GET    /users/sign_in(.:format)                          devise/sessions#new
+                          user_session POST   /users/sign_in(.:format)                          devise/sessions#create
+                  destroy_user_session DELETE /users/sign_out(.:format)                         devise/sessions#destroy
+               user_omniauth_authorize        /users/auth/:provider(.:format)                   omniauth_callbacks#passthru {:provider=>/facebook/}
+                user_omniauth_callback        /users/auth/:action/callback(.:format)            omniauth_callbacks#(?-mix:facebook)
+                         user_password POST   /users/password(.:format)                         devise/passwords#create
+                     new_user_password GET    /users/password/new(.:format)                     devise/passwords#new
+                    edit_user_password GET    /users/password/edit(.:format)                    devise/passwords#edit
+                                       PUT    /users/password(.:format)                         devise/passwords#update
+              cancel_user_registration GET    /users/cancel(.:format)                           registrations#cancel
+                     user_registration POST   /users(.:format)                                  registrations#create
+                 new_user_registration GET    /users/sign_up(.:format)                          registrations#new
+                edit_user_registration GET    /users/edit(.:format)                             registrations#edit
+                                       PUT    /users(.:format)                                  registrations#update
+                                       DELETE /users(.:format)                                  registrations#destroy
+                     user_confirmation POST   /users/confirmation(.:format)                     devise/confirmations#create
+                 new_user_confirmation GET    /users/confirmation/new(.:format)                 devise/confirmations#new
+                                       GET    /users/confirmation(.:format)                     devise/confirmations#show
+                                 users GET    /users(.:format)                                  users#index
+                                       POST   /users(.:format)                                  users#create
+                              new_user GET    /users/new(.:format)                              users#new
+                             edit_user GET    /users/:id/edit(.:format)                         users#edit
+                                  user GET    /users/:id(.:format)                              users#show
+                                       PUT    /users/:id(.:format)                              users#update
+                                       DELETE /users/:id(.:format)                              users#destroy
+                  upload_photo_profile GET    /profile/upload_photo(.:format)                   profiles#upload_photo
+                    save_photo_profile PUT    /profile/save_photo(.:format)                     profiles#save_photo
+                               profile POST   /profile(.:format)                                profiles#create
+                           new_profile GET    /profile/new(.:format)                            profiles#new
+                          edit_profile GET    /profile/edit(.:format)                           profiles#edit
+                                       GET    /profile(.:format)                                profiles#show
+                                       PUT    /profile(.:format)                                profiles#update
+                                       DELETE /profile(.:format)                                profiles#destroy
+                             user_root        /dashboard(.:format)                              home#general
+                             user_root        /general(.:format)                                home#general
+language_lists_education_and_interests GET    /education_and_interests/language_lists(.:format) education_and_interests#language_lists
+               education_and_interests GET    /education_and_interests(.:format)                education_and_interests#index
+                                       POST   /education_and_interests(.:format)                education_and_interests#create
+            new_education_and_interest GET    /education_and_interests/new(.:format)            education_and_interests#new
+           edit_education_and_interest GET    /education_and_interests/:id/edit(.:format)       education_and_interests#edit
+                education_and_interest GET    /education_and_interests/:id(.:format)            education_and_interests#show
+                                       PUT    /education_and_interests/:id(.:format)            education_and_interests#update
+                                       DELETE /education_and_interests/:id(.:format)            education_and_interests#destroy
+                               contact GET    /contact(.:format)                                home#contact
+                                       POST   /contact(.:format)                                home#send_email

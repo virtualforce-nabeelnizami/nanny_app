@@ -1,0 +1,68 @@
+<div class="sub_container">
+
+	<div id="signup_box" class="right">
+    <div id="signup_box_top" class="element">Register to participate in the pre-launch of Royal Nanny Care</div>
+    <div id="signup_box_middle" class="element">Number of pre-registrations are limited, don't be left out.</div>
+    <div id="signup_box_bottom" class="element">
+		<div id="signup_fields" class="left">
+			<%= render :partial => "shared/signup" %>
+		</div>
+
+		<div id="faceook_signup" class="left">
+			<%= link_to image_tag('fb_login_button.png'), user_omniauth_authorize_path(:facebook)%>		
+			 <ul>
+			  <li>Higher Standard of Service</li>
+	          <li>Great Families to work for</li>
+	          <li>Higher Salary</li>
+			</ul>		
+		</div>
+		<div class="clear"></div>
+		<div id="location">
+			<div id="location_box">
+				Your location is
+				<span id="location_text"> <%= @addr%> </span>
+				<div class="popbox">
+					<a class='open' href="javascript:void(0)" > Change Location </a>
+					<div class='collapse'>
+						<div class="box">
+							<div class="close right">
+								<a href="javascript:void(0)"> <%= image_tag('x.png')%></a>
+							</div>
+	                          <%= form_tag(home_switch_location_path , :id=>'loc_form', :method => :get,:remote => true,'data-target'=>'location',:condition => "validate_mail()") do %>
+								<div class="box_text">
+									Change Your Location
+									<br/>						
+									
+								</div>
+
+								<div class="done left">
+									<%= image_submit_tag('done.png') %>
+								</div>
+							
+							  <%end%>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	 </div>
+	
+</div>
+	<div class="clear"></div>
+</div>
+
+
+<div id="success_reg" style="display:none">
+		<p>Thank you for participating in the pre-launch of ROYALNANNYCARE.com, we are elated to welcome you into the royal family.</p>
+			<p> The official launch of ROYALNANNYCARE.com is almost upon us. As we continue building our application and online registry we 
+			 would like to take this opportunity to invite you to partake in our social campaigns and join our efforts of spreading the 
+			 good news about ROYALNANNYCARE.com. </p>
+			<p>We believe in strong customer service and building upon our users experience. Which is why 
+			 we are asking for your help. We are actively searching for individuals to help us spread the word so that we can help others. 
+			 We value your opinion.</p>
+			 <p>You should have an email awaiting you in your mailbox. Please confirm your pre-registration 
+			 	and help us help others. Together we can care for theworld.</p></div>
+	
+	
+</div>	

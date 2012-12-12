@@ -1,0 +1,24 @@
+<div id="language-lists">
+  
+    <%- @user.languages.each do |l| %>
+      <% if l.persisted? %>
+        <div class="title">
+          <span class="label"><%= l.language %></span>
+          <span class="remove">&times;</span>
+        </div>
+      <%- end %>
+    <%- end %>
+
+  <div class="field">
+    <%= f.fields_for :languages do |fl|%>
+      <%- class_name = fl.object.persisted? ? fl.object.language.gsub(" ", "_").downcase : ""%>
+      <%= fl.hidden_field :id, :class => class_name %>
+      <%= fl.hidden_field :language, :class => class_name %>
+    <%- end -%>
+  </div>
+</div>
+<br clear="all"/>
+<div id="language-add">
+  <%= select_tag 'languages', options_for_select(Language::LIST_OF_LANGUAGE) %>
+  <span class="btn add">add</span>
+</div>

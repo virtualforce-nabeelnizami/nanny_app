@@ -1,0 +1,86 @@
+<div id="preferences_container" class="left">
+  
+  <div class="top">
+    <div class="pref_header">Move to the front of the line</div>
+    <div class="text">Our registry will soon be filled with high quality care jobs and
+      you will be among the first to land them</div>
+    </div>
+
+    <div id="preferences_left" class="left">
+      <p>* Required Fields</p>
+      <% if @user_preference.present? %>
+        <%= form_for current_user, :html => {:class => "edit_preferences" }, :validate => true do |f| %>
+          <%= f.text_field :street_address, :title => "Street Address*", :class => "info-input" %>
+          <%= text_field_tag "stree_address2", '', :size => 30, :class => "info-input" %>
+          <%= f.text_field :city, :title => "City*", :class => "info-input" %>
+          <%= f.text_field :state, :title => "State*", :class => "info-input" %>
+          <%= f.text_field :zip_code, :title => "Zip Code*", :class => "info-input" %>
+          <%= f.text_field :phone_number, :title => "Phone*", :class => "info-input" %>
+          <div id="show-phone-container">
+            <label for="user_show_phone">
+              <%= f.check_box :show_phone %>
+              Show this number in my profile
+            </label>
+          </div>
+          <div id="date_of_birth_holder">
+            <%= label_tag 'date_of_birth', 'Birthday:* (must be 18+)' %>
+            <%= f.date_select :date_of_birth, :prompt => {:year => 'Year', :month => 'Month', :day => 'Day', }, :start_year => 1950, :order => [:month, :day, :year] %>
+          </div>
+          <%= f.text_field :religion, :title => "Religion", :class => "info-input"%>
+    </div>
+    <div id="preferences_left" class="left">
+      <h1>Preferences!</h1>
+          <%= f.fields_for :preference do |fp| %>
+            <% @user_preference.attributes.map{|p| p}[1..12].each do |attr| %>
+              <% value = (attr[1].nil? ? false : attr[1]) %>
+              <%= fp.hidden_field attr[0].to_sym, :value => value %>
+            <% end %>      
+        <% end %>
+      
+      <%= display_user_preferences_table(@user_preference) %>
+
+      <h2>Tap or click on each preference</h2>
+      <p class="preference_question"><%= link_to image_tag('pref_button.png'), "javascript:void(0)", :onclick => "handleClick(this,'military_spouse')",:class=>"fade_#{!@user_preference.military_spouse}"  %>
+       I'm a military spouse
+     </p>
+     <p class="preference_question">
+       <%= link_to image_tag('pref_button.png'), "javascript:void(0)", :onclick => "handleClick(this,'speaks_english')",:class=>"fade_#{!@user_preference.speaks_english}"  %>
+       I speak fluent english</p>
+       <p class="preference_question">
+        <%= link_to image_tag('pref_button.png'), "javascript:void(0)", :onclick => "handleClick(this,'eligible_to_work')",:class=>"fade_#{!@user_preference.eligible_to_work}"  %>
+        I'm eligible to work in the US</p>
+      
+      <div class="layout-slider">
+        <%= text_field_tag :miles_slider, @user_preference.miles_to_travel || 0 %>
+        <p id="miles_count">0 Miles</p>
+      </div>
+      <% end %>
+      <% end %>
+      
+      <%= submit_tag "Save preferences", :id => "save_preferences" %>
+      </div>
+
+      <div id="preferences_right" class="left">
+       <div id="status_box">
+        <%=image_tag('status_bars.png')%>
+
+        <div id="status_bar"><div id="status_progress" style="width:<%=@percent_complete%>%"></div> </div>
+        <ul><li>0%</li><li>25%</li><li>50%</li><li>75%</li><li style="margin-right:0px;">100%</li></ul>
+
+      </div>  
+
+    
+
+      <div id="summary_header">Summary </div> 
+      <ul class="status_list">
+       <%=display_user_preferences(@user_preference) unless @user_preference.nil? %>
+       <li>You are willing to travel 0 miles.</li>
+       <li>You have not connected your</li>
+     </ul>
+    
+   </div> 
+ </div>
+ <div class="clear"></div>
+</div>
+
+<div class="clear"></div>

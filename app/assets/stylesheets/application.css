@@ -1,0 +1,621 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ *= require facebox
+ *= require jquery.ui.dialog
+ *= require toastmessage
+ *= require jquery-ui
+*/
+
+
+
+/*******filed_default_text*/
+
+
+.defaultText { width: 300px; }
+    .defaultTextActive { color: #a1a1a1; font-style: italic; }
+
+
+
+
+
+/***********/
+
+
+
+
+
+body{
+	font-family:Arial, Helvetica, sans-serif;
+     background-color:black;
+     
+}
+
+#header_logo{
+	position:relative;
+	left:25px;
+	top:5px;
+}
+
+img{
+	border:0px;
+}
+
+
+.clear{clear:both;}
+.left{float:left;}
+.right{float:right;}
+
+#main_container{
+  margin:auto;
+  margin-topx:20px;
+  width:1200px;
+  /*height:100%;*/
+  /*background:url('interior_background.png') no-repeat;*/
+  position:relative;
+}
+
+
+footer{
+  text-align:left;
+  margin: 10px auto;
+  font-size: 12px;
+  background-color:black;/*#231F20;*/
+  color:white;
+  font-weight:bold;
+  width:70%;
+  height:30px;
+  position: relative;
+ }
+
+#main_container .content{	
+  padding: 20px 20px;
+  width:80%;
+  margin:auto;
+  margin-top:60px;
+  color:black;
+  background-color:white;
+  backgroundx: url('white_box.png') no-repeat;
+}
+
+#front_logo .icon{
+  background: url('nanny-icon.png') -44px -15px;
+  height: 330px;
+  width: 349px;
+}
+
+
+fieldset{
+	border:0px;
+}
+
+
+.flash{
+  padding: 5px;
+  font-size: 12px;
+  color: white;
+}
+
+.flash.alert{ background: orange;}
+.flash.error{ background: red;}
+.flash.success{ background: green;}
+.flash.warning{ background: red;}
+
+
+a{
+	color:white;
+	text-decoration:none;
+	font-weight:bold;
+	display:inline;
+	padding:0px 3px;
+}
+
+
+#captcha{
+  display: none;
+}
+
+#facebox .body {
+  width: 600px !important;
+}
+
+.avatar{
+  height: 150px;
+  width: 100%;
+  background-color:white;
+  display:block;
+  backgroundx: url('http://www.lifeshinecoaching.com/wp-content/uploads/female-avatar-profile-pic-150x150.jpg') #eee;
+}
+.avatar img{
+	height: 150px;
+  width: 100%;
+}
+
+
+#photo_form input{
+	background-color:white;
+	
+}
+/*****************/
+/** QapTcha CSS **/
+/*****************/
+.QapTcha {margin-top:20px;width:254px;}
+.QapTcha .clr{clear:both}
+.QapTcha .bgSlider {width:252px;height:37px;float:left;border:1px solid #040404;background-color:#101010;}
+.QapTcha .Slider {
+  width:52px;
+  height:37px;
+  background:transparent url('http://demos.myjqueryplugins.com/qaptcha/images/bg_draggable_qaptcha.jpg') no-repeat;
+  cursor:e-resize;
+  position:relative;
+  top:0;left:0
+}
+
+
+/************Prefs***************/
+ 
+
+#preferences_container{	
+	color:black;
+	/*width:830px;*/
+	width: 100%;
+	heightx:709px;
+	background: url('dashboard_pref_background.png') no-repeat;
+	padding:10px 0px; 
+
+}
+
+
+#preferences_container .top{
+	border-bottom:1px solid black;
+	width:100%;
+	padding:20px;
+}
+
+.pref_header{
+	color:#428f85;
+	font-size:30px;
+	text-decoration:underline;
+	font-weight:bold;
+}
+
+
+
+#preferences_container .top .text{
+	font-weight:bold;
+	width:70%;
+}
+#preferences_container p{
+	color:black;
+	
+}
+
+#preferences_container h1,#preferences_container h2{
+	color:#428f85;
+	
+}
+
+
+
+#dash_center{
+   background-color:white;	
+ }
+
+#dash_left{
+	width:200px;
+	margin-right:80px;
+}
+
+#preferences_left{
+  width:29%;	
+  border-right:1px solid;
+  height:100%;	
+  padding:20px;
+}
+
+
+ #preferences_right{
+  width:30%; 
+  padding-left:20px;
+}
+
+
+ul.preference_icon_list{
+	list-style-type:none;
+	width:100%;
+	padding:0px;
+}
+
+ul.preference_icon_list li{
+	display:inline;
+	padding-right:10px;	
+}
+
+ul.preference_icon_list li img{
+	heightx:55px;
+	widthx:34px;	
+}
+
+ul.status_list{
+	list-style-type:none;
+	list-style-position: outside;
+	padding:0px;
+}
+
+ul.status_list li{
+	color:black;
+	font-weight:bold;
+	font-size:20px;
+}
+
+#status_box{
+	margin-top:40px;
+	margin-bottom:20px;
+}
+
+#status_box img{
+	width:300px;
+}
+
+#status_box ul{
+	list-style-type: none;
+	padding:0px;
+}
+
+#status_box ul li{
+	display:inline;
+	padding-right:37px;
+}
+
+
+#status_bar{
+	height:20px;
+	border:1px solid;
+	width:300px
+}
+
+
+#status_progress{
+	background-color:#428f85;
+	height:100%;
+}
+
+
+#summary_header{
+	font-size:30px;
+	color:#428f85;
+	font-weight:bold;
+}
+
+
+.fade_true{
+	/* Required for IE 5, 6, 7 */
+	/* ...or something to trigger hasLayout, like zoom: 1; */
+	width: 100%; 
+		
+	/* Theoretically for IE 8 & 9 (more valid) */	
+	/* ...but not required as filter works too */
+	/* should come BEFORE filter */
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	
+	/* This works in IE 8 & 9 too */
+	/* ... but also 5, 6, 7 */
+	filter: alpha(opacity=30);
+	
+	/* Older than Firefox 0.9 */
+	-moz-opacity:0.3;
+	
+	/* Safari 1.x (pre WebKit!) */
+	-khtml-opacity: 0.3;
+    
+	/* Modern!
+	/* Firefox 0.9+, Safari 2?, Chrome any?
+	/* Opera 9+, IE 9+ */
+	opacity: 0.3;
+}
+
+
+
+.progress_item{
+   margin-bottom:30px;
+   color:white;
+   width:250px;
+   clear:both;
+}
+
+.progress_item img{
+	float:right;
+}
+
+
+.progress_item span{
+  	
+}
+
+.contact_us{
+  padding: 20px;
+  padding-top:50px;
+  
+}
+.contact_text .small, .contact_text .medium,.contact_text .big {
+	margin:20px 0px;
+	padding:0px;
+	
+}
+.small, .medium,.big{
+    margin-top:10px;
+	font-weight:bold;
+
+}
+
+.small{
+	font-size:16px;
+ }
+ 
+ .medium{
+ 	font-size:22px;
+ }
+
+ .big{
+ 	
+ 	font-size:26px;
+ }
+
+.contact_us .fields .field label{
+  width: 70px;
+  display: block;
+  float: left;
+  font-size: 14px;
+}
+
+.suggestion a, .suggestion a:visited {
+  color: #000;
+}
+
+
+
+.interior_page_title{
+	width:283px;
+	height:39px;
+	background:url('interior_title_fade.png') no-repeat;
+	font-weight:900;
+	text-decoration:underline;
+	padding-top:5px;
+	padding-left:40px;
+	font-size:25px;
+}
+
+.sub_container{
+	font-weight:normal;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.sub_container p{
+	margin-bottom:30px;
+}
+.sub_container hr{
+	width:60%;
+	margin:auto;
+	margin-top:50px;
+}
+
+
+.contact_text{
+	width:60%;
+
+}
+
+#contact_sub_container{
+	margin-top:-80px;
+}
+
+.contact_text .interior_page_title{
+   	width:283px;
+	height:39px;
+	background:url('interior_title_fade.png') no-repeat;
+	font-weight:900;
+	text-decoration:underline;
+	font-size:25px
+}
+
+
+.field_with_errors .message {
+  color: #D00;
+  padding-left: 2px;
+  font-size: 12px;
+}
+
+.info-input {
+	width: 175px;
+	height: 22px;
+	margin: 7px;
+}
+
+::-webkit-input-placeholder {
+   color: #BBB;
+}
+
+:-moz-placeholder {  
+   color: #BBB;
+}
+
+.layout-slider {
+	margin: 30px 0 50px;
+}
+
+#save_preferences {
+	float: right;
+}
+
+#miles_count {
+	text-align: center;
+	margin: 40px;
+}
+
+#date_of_birth_holder {
+	margin: 20px 0 5px 5px;
+	width: 220px;
+}
+
+#show-phone-container label {
+	margin-left: 5px;
+	text-decoration: underline;
+	font-style: normal;
+	font-size: 13px;
+}
+
+.login_out {
+	color: black;
+	float: right;
+}
+
+.reference-field {
+	width: 181px;
+}
+
+#reference_type_container ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+}
+
+#reference_type_container ul li { 
+	display: inline;
+	float: left;
+	font-size: 15px;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.reference_general { width: 193px }
+
+#privacy_container {
+	font-size: 15px;
+}
+
+#privacy_container label {
+	padding-left: 40px;
+}
+
+#reference-form .actions input {
+	float: right;
+	width: 130px;
+	height: 100px;
+}
+
+#reference-list {
+	font-family: verdana,arial,sans-serif;
+	font-size: 15px;
+	color: 
+	#333333;
+	border-width: 1px;
+	border-color: 
+	#666666;
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 30px;
+}
+
+#reference-list th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: 
+	#666666;
+	background-color: 
+	#dedede;
+}
+
+#reference-list td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: 
+	#666666;
+	background-color: 
+	#ffffff;
+}
+
+#agreement-container {
+	font-size: 15px;
+}
+
+#agreement-container ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	margin-top: 25px;
+}
+
+#agreement-container ul li { 
+	display: inline;
+	float: left;
+	margin-right: 20px;
+
+}
+
+#agreement-text { width: 70%; }
+#close-btn input { width: 150px; }
+textarea#user_interests{
+  height: 100px;
+  max-width: 260px
+}
+
+ul#user-detail-1{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul#user-detail-1 li{
+  margin-bottom: 5px
+}
+
+#language_autocomplete{
+  width: 280px;
+}
+
+table#availibilty,  table#availibilty th, table#availibilty td{
+  border-spacing:0;
+  border-collapse:collapse;
+  border: 1px solid #DDD;
+  margin: 0;
+  padding: 0;
+}
+
+table#availibilty td.label{
+  width: 96px;
+  text-align: center;
+  font-size: 12px;
+  padding: 4px 0;
+}
+
+table#availibilty td{
+  height: 10px;
+  width: 26px;
+  text-align: center;
+  cursor: pointer;
+}
+
+table#availibilty tbody td.selected{
+  background: #6767E9;
+}
+
+.btn{
+  padding: 5px;
+  font-size: 12px;
+  background: #EEE;
+  cursor: pointer;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}

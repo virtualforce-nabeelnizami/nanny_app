@@ -1,0 +1,18 @@
+<ul id="user-detail-1">
+  <li>
+    <%= f.check_box :live_in %>
+    <%= f.label :live_in, "I'm interested in working as a live-in" %>
+  </li>
+
+  <li>
+    <%= f.check_box :summer %>
+    <%= f.label :summer, "I'm available during summer" %>
+  </li>
+
+  <li>
+    <%= check_box_tag 'respond_by',"",  :checked => @user.user_detail.present? ? "checked" : "" %>
+    <%= f.label :respond_by, "I'm committed to respond messages from families seeking care wihtin:" %>
+    <%= f.select :respond_by, options_for_select([1,2,3,4,5,6,7]) %>
+    <%= label_tag "days" %>
+  </li>
+</ul>

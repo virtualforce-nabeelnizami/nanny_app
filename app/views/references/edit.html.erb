@@ -1,0 +1,14 @@
+<div id="content">
+	<h2>Manage Your References</h2>
+	<%= render 'form' %>
+	<table id="reference-list">
+		<thead>
+			<th>Name</th>
+			<th>Privacy</th>
+			<th>Care services it applies to</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+		</thead>
+		<%= render :partial => @reference %>
+	</table>
+</div>

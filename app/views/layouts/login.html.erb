@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Royalnannycare.com</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  
+  <script type="text/javascript">
+  $(function() {
+  	
+  	  $(document).ready(function(){
+      $('.popbox').popbox();
+   });
+
+$('#loc_form').submit(function(){
+    if(!/(^\d{5}$)|(^\d{5}-\d{4}$)/.test($('#zip_code').val())){
+    	alert("Please Enter A Valid Zip Code")
+    	return false;
+    }
+});
+  	
+    /* Convenience for forms or links that return HTML from a remote ajax call.
+    The returned markup will be inserted into the element id specified.
+     */
+   $('#loc_form').bind("ajax:success",  function(event, data, status, xhr){ 
+       data = $.parseJSON(xhr.responseText); 
+       $('#location_text').html(data.address)
+       $('#user_zip_code').val(data.zip) 
+       $('.close').click()
+    }).bind("ajax:failure",  function(event, data, status, xhr){ 
+      alert("Invalid zip code. Please Try Again")
+    })
+});
+  
+  
+  </script>
+</head>
+<body id="login_page">
+	
+
+<div id="login_container">   
+  <div id="login_header"></div>
+  <div class="content">
+    <%= link_to_if user_signed_in?, 'Upload Photo', '#', :id => 'photo_uploader_link' %>
+    <%= yield %>
+  </div>
+ <%=render 'shared/footer'%>
+</div>
+
+
+</body>
+</html> 

@@ -1,0 +1,62 @@
+<div id="preferences_container" class="left">
+  
+  <div class="top">
+    <div class="pref_header">Education and Availability</div>
+    <div class="text">The more information you provide the easier it will be for us to match you with the perfect job within a caring home</div>
+    </div>
+    <%= form_for @user, :url => education_and_interests_path, :html => {:method => :post} do |f| %>
+      <div id="preferences_left" class="left">
+        
+        <!-- Education Form goes here -->
+        <h3>Education</h3>
+        <%= f.fields_for :education do |fe| %>
+          <%= render :partial => 'form_education', :locals => {:f => fe}%>
+        <% end %> 
+        <br/>
+        <br/>
+
+        <!-- Language Form goes here -->
+        <h3>Language</h3>
+        <%= render :partial => 'form_language', :locals => {:f => f}%>
+      
+      </div>
+      <div id="preferences_left" class="left">
+        <!-- Availability Form goes here -->
+        <h3>Availability</h3>        
+          <%= render :partial => 'form_availability', :locals => {:f => f}%>
+        <br/>
+        <br/>
+        <!-- Additional Services Form goes here -->
+        <h3>Highlight above all the time slots that you are available to work</h3>
+        <%= f.fields_for :user_detail do |fud| %>          
+          <%= render :partial => 'form_user_detail_1', :locals => {:f => fud}%>
+        <% end %>
+      </div>
+      <div id="preferences_left" class="left">
+        <!-- Hobbies and interest Form goes here -->
+        <h3>Hobbies and Interest</h3>
+          <%= f.text_area :interests, :placehoder => "Hobbies and interests" %>
+        <br/>
+        <br/>
+        <!-- Additional Services Form goes here -->
+        <h3>Additional Services</h3>
+        <%= f.fields_for :user_detail do |fud| %>          
+          <%= render :partial => 'form_user_detail_2', :locals => {:f => fud}%>
+        <% end %>
+
+        <%= f.submit "Submit"%>
+      </div>
+    <% end %>
+ </div>
+ <div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    initAvailibiltyTable();
+    addLanguage()
+  })
+</script>

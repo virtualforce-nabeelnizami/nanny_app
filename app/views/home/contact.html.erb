@@ -1,0 +1,63 @@
+
+ <div class="sub_container" id="contact_sub_container"> 	
+ 	
+  <div class="contact_us">
+  	 <% if flash[:notice] %>
+      <div class="notice" style="text-align:center;width:224px;font-weight:bold;"><%= flash[:notice] %></div>
+    <% end %>
+  	 <%= form_tag contact_path do %>
+    <fieldset class="fields">
+      <div class="field">
+        <%= label_tag :name %>
+        <%= text_field_tag :name %>
+      </div>
+      
+      <div class="field">
+        <%= label_tag :email %>
+        <%= text_field_tag :email %>
+      </div>
+      <div class="field">
+        <%= label_tag :subject %>
+        <%= text_field_tag :subject %>
+      </div>
+      
+      <div class="field">
+        <%= label_tag :body %>
+        <%= text_area_tag :body %>
+      </div>
+    </fieldset>
+     <div id="contact_submit" style="float:right">
+      <%= submit_tag "Send" %>
+    </div>
+    
+      <% end %>
+    </div>
+   
+   <div class="contact_text left" >
+   
+      <div class="interior_page_title">Contact Information</div>
+      
+		<div>Contact us for media information and business opportunities.
+		We are currently in the process of building our business and
+		are actively seeking companies to provide us of a wide
+		spectrum of services ranging from background checks, to
+		special training and certifications</div>
+		
+      	<div class="small" style="margin-top:10px;">Companies we are looking for</div>
+      	
+      	<div class="big">Background Check Companies</div>
+      	<div>We are looking for several companies to create a liason with in order to run
+           the background checks of our users in our website.</div>
+           
+        <div class="big">News & Media</div>
+        <div>Our goal is to create ing an impact from the start. We are open to chat online
+           publications and other media services to provide a hint of what we are about
+           to do with Royal Nanny Care.</div>   
+     
+        <div class="big">Special Training and Certifications</div>
+<div>We are aiming to create a listing of companies that provide special training
+and certfication for care providers, such as CPR, Nutrition, Elder Care, etc.</div>
+    
+    </div>
+
+</div>

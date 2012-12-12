@@ -1,0 +1,37 @@
+<div id="reference-form">
+	<%= form_for @reference, :remote => true do |f| %>
+		<div>
+			<%= f.text_field :name, :title => "Reference Name", :class => "reference-field" %>
+			<%= f.text_field :phone_number, :title => "Phone Number", :class => "reference-field" %>
+			<%= f.text_field :email, :title => "Email", :class => "reference-field" %>
+			<%= f.select :relationship, options_for_select(ReferenceType::RELATIONSHIPS.each {|y| y }, @reference.relationship), :include_blank => true%>
+		</div>
+		<div id="reference_type_container">
+			<ul>
+				<li>Use this reference as a:</li>
+				<li class="reference_general">
+					<label for="reference_for_General">
+						<%= radio_button_tag :reference_for, 'General' %> General References (For all services)
+					</label>
+				</li>
+				<li>
+					<label for="reference_for_Profile">
+						<%= radio_button_tag :reference_for, 'Profile' %> Specific for
+					</label>
+				</li>
+				<li>
+					<%= select_tag(:reference_types, options_for_select(ReferenceType::PROFILE_TYPES.each {|y| y }, @reference.reference_types.map { |r| r.name } ), { :multiple => true, :size => 7 }) %>
+				</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+		<div id="privacy_container">
+			<p>Reference Privacy Level</p>
+			<label for="reference_private_1"><%= f.radio_button :private, '1', { :checked => ( @reference.private == true ? true : false ) } %> Publish this reference in my profile</label><br/>
+			<label for="reference_private_0"><%= f.radio_button :private, '0', { :checked => ( @reference.private == false ? true : false ) } %> Keep this reference only available upon request</label>
+		</div>
+		<div class="actions">
+			<%= submit_tag 'Save' %>
+		</div>
+	<% end %>
+</div>

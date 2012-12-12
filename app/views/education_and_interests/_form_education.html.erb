@@ -1,0 +1,5 @@
+<%= f.select :level, options_for_select(Education::LEVEL) %>
+<%= f.text_field :school_name, :placeholder => "School name" %>
+<%= f.select :degree, options_for_select(Education::LEVEL) %>
+<%= f.text_field :major, :placeholder => "Major" %>
+<%= f.text_field :graduation_year, :placeholder => "Graduation year" %>
