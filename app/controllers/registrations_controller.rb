@@ -1,6 +1,8 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def create
+    role=params[:user][:role]
+    params[:users].delete(:role)
     build_resource
     # debugger
     resource.skip_confirmation!
