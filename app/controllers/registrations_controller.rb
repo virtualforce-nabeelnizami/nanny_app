@@ -11,7 +11,7 @@ class RegistrationsController < Devise::RegistrationsController
     puts "((((((((((((((((( #{resource.errors.inspect}"
 #  flash[:message] = "Feilds can not be blank"
     if  @success #&& verified_captcha(params)
-        @user_roles = UserRole.new(:role_id=>params[:user][:role], :user_id=>resource.id)
+        @user_roles = UserRole.new(:role_id=>role, :user_id=>resource.id)
         @user_roles.save!
         puts "_______________________@user_roles.inspect=#{@user_roles.inspect}"
      if resource.active_for_authentication?
