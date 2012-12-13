@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
    #has_attached_file :photo,:url => "/assets/photos/:id/:style/:basename.:extension"
 
    attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
-   attr_accessible :photo,:zip_code, :crop_x, :crop_y, :crop_w, :crop_h, :role
+   attr_accessible :photo,:zip_code, :crop_x, :crop_y, :crop_w, :crop_h
    after_update :reprocess_photo, :if => :cropping?
    
    has_many :user_roles, :dependent => :destroy
@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
 
     :zipcode, :provider, :uid, :street_address, :city, :state, :phone_number, :date_of_birth, :religion, :show_phone, 
     :preference_attributes, :education_attributes, :languages_attributes, :user_detail_attributes, :availabilities_attributes, 
-    :interests
+    :interests, :role
 
   attr_accessor :update_preferences, :languages_attributes, :availabilities_attributes
 
