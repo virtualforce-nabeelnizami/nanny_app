@@ -21,5 +21,11 @@ class ApplicationController < ActionController::Base
       redirect_to "/dashboard",:status=>302
     end
   end
+
+  def unsigned_user
+    if user_signed_in?
+       redirect_to "/dashboard"
+    end
+  end
   
 end

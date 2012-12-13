@@ -4,8 +4,14 @@ class RegistrationsController < Devise::RegistrationsController
     build_resource
     # debugger
     resource.skip_confirmation!
+    
     @success = resource.save
+    puts "((((((((((((((((( #{resource.errors.inspect}"
+#  flash[:message] = "Feilds can not be blank"
     if  @success #&& verified_captcha(params)
+        @user_roles = UserRole.new(:role_id=>params[:user][:role], :user_id=>resource.id)
+        @user_roles.save!
+        puts "_______________________@user_roles.inspect=#{@user_roles.inspect}"
      if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_navigational_format?
         sign_in(resource_name, resource)
@@ -23,9 +29,9 @@ class RegistrationsController < Devise::RegistrationsController
         end        
       end
     else
-      @messages = resource.errors.full_messages.join(", ")
+      @messages = resource.errors.full_messages.join("<br/>")
       clean_up_passwords resource
-      set_flash_message :error, "captcha failed"
+      set_flash_message :error, @messages
       respond_to do |format|
         format.html { redirect_to root_url }
         format.js  { }

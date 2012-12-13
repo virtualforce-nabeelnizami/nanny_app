@@ -619,3 +619,42 @@ table#availibilty tbody td.selected{
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
+.notice {
+    float: left;
+    width: 100%;
+}
+div.notice {
+
+margin-left: auto;
+
+margin-right: auto;
+
+text-align: center;
+
+width: 40%;
+
+border: 5px solid #ccc;
+
+margin-top: 50px;
+
+padding: 20px;
+
+font-weight: bold;
+
+}
+.roles{
+    float: left;
+    width: 100%;
+}
+.roles p{
+    float: left;
+    width: auto;
+}
+.roles label{
+    float: left;
+    
+}
+.roles input{
+    float: left;
+    margin-left: 0px;
+}

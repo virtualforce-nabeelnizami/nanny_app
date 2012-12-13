@@ -17,7 +17,7 @@ gem 'client_side_validations'
 gem 'jquery-ui-rails'
 gem 'rake', '0.9.2.2'
 gem 'execjs'
-#gem 'therubyracer'
+gem 'therubyracer'
 
 
 group :test, :development do

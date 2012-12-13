@@ -3,11 +3,19 @@
 
 
 <%= form_for(:user, :url => user_registration_url, :html => { :id => "ajax_signup",:autocomplete=>"off"}, :remote => false) do |f| %>
-  <div><%= f.text_field :full_name, :placeholder => "Full Name",:class=>"sign_up_field",:title=>"Full Name" %></div>
+<div><%= f.text_field :full_name, :placeholder => "Full Name",:class=>"sign_up_field",:title=>"Full Name" %></div>
   <div><%= f.email_field :email, :placeholder => "Email",:class=>"sign_up_field",:title=>"Email Address"   %></div>
-  <div><%= f.text_field :password, :placeholder => "Password",:class=>"sign_up_field password_field",:title=>"Password",:onClick=>"changeToPassword(this)"   %></div>
-  <div><%= f.text_field :password_confirmation ,:placeholder => "Password Confirmation",:class=>"sign_up_field password_field",:title=>"Password Confirmation",:onClick=>"changeToPassword(this)"   %></div>
-  <div><%= f.hidden_field :zip_code,:value=>@zip%></div> 
+  <div><%= f.password_field :password,:value=>'', :placeholder => "Password",:class=>"sign_up_field password_field",:title=>"Password",:onClick=>"changeToPassword(this)"   %></div>
+  <div><%= f.password_field :password_confirmation,:value=>'' ,:placeholder => "Password Confirmation",:class=>"sign_up_field password_field",:title=>"Password Confirmation",:onClick=>"changeToPassword(this)"   %></div>
+  <div><%= f.hidden_field :zip_code,:value=>@zip%></div>
+  <div class ="roles">
+  
+			
+			<label for="Provider_1"><%= f.radio_button :role, '1', { :checked => true ? true : false  } %>Provider</label><br/>
+			<label for="Care_Seeker_2"><%= f.radio_button :role, '2', { :checked => false ? true : false  } %>Care Seeker</label>
+
+  
+  </div>
   <div class="group-submit">
     <%= image_submit_tag "sign_up.jpg", :rel => "facebox", :class => "signup" %> 
   </div>  <% end %>
@@ -15,31 +23,3 @@
 
   
 
-<script type="text/javascript">
-
-$('.sign_up_field').DefaultText();
-
-$('.password_field').each(function(){
-	
-	$(this).click(function(){
-	     val = $(this).val();
-         if(val==$(this).attr("title")){
-         	$(this).val("");
-         }	      
-		 $(this).attr("type","password")
-	})
-	
-	$(this).blur(function(){
-		val = $(this).val();
-		
-		 if(val=="" ||val==$(this).attr("title")){
-			$(this).val($(this).attr("title"))
-		 	$(this).attr("type","password")
-		 }
-	})
-	
-	
-	
-})
-
-</script>

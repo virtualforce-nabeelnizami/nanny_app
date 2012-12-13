@@ -15,7 +15,9 @@ NannyApp::Application.routes.draw do
 
   resources :users,:except => [:show]
   resources :references
-  resources :users
+  resources :users do
+    resources :user_roles
+  end
 
   resource :profile do
     get :upload_photo

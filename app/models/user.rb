@@ -42,9 +42,9 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :preference, :education, :languages, :user_detail
   accepts_nested_attributes_for :availabilities, :allow_destroy => true
   
-  # validates_presence_of   :password, :if => :password_required
+   validates_presence_of   :full_name
   # validates_confirmation_of :password, :if => :password_required
-
+  validates :email,:presence => {:message => " is in use "}, :allow_blank => true,:uniqueness => { :case_sensitive => true }
   # validates_presence_of :street_address, :city, :state, :zip_code, :phone_number, :date_of_birth, :on => :update
     
   def has_photo

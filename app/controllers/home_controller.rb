@@ -1,11 +1,13 @@
 class HomeController < ApplicationController
 
   before_filter :authenticate_user!, :only=>[:general_info]#:except => [:contact,:index,:location,:captcha,:switch_location] 
-  before_filter :preferences, :only => [:index,:general] 
+  before_filter :preferences, :only => [:index,:general]
+  before_filter :unsigned_user, :only=>[:index]
 
 
   def index
     location = user_location(nil)
+    
    
     @addr = ""
     @zip = ""
